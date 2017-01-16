@@ -5,8 +5,16 @@
   ng-mousemove="mouseMove($event)"
   >
 
+  <defs>
+    <pattern id="image" patternUnits="userSpaceOnUse" height="24" width="24">
+        <image xlink:href="/images/blueprint-designer/canvas-dot-grid.png"></image>
+    </pattern>
+  </defs>
+
   <!-- Zoom -->
   <g ng-attr-transform="scale({{zoomLevel()}})">
+
+  <rect height="1512px" width="2792px" fill="url(#image)"/>
 
   <!-- Connection Mode Notification -->
   <g ng-if="inConnectingMode">

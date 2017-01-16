@@ -21,7 +21,7 @@
       });
 
   /** @ngInject */
-  function BlueprintCanvasController($scope, $filter, DesignerState, BlueprintsState, $q, CollectionsApi, $log) {
+  function BlueprintCanvasController($scope, $filter, DesignerState, BlueprintsState, $q, CollectionsApi, $log, $window) {
     var vm = this;
     var newNodeCount = 0;
 
@@ -219,5 +219,13 @@
     $scope.$on('zoomOut', function(evt, args) {
       vm.chartViewModel.zoom.out();
     });
+
+    // Test
+    vm.svg2pdf = function() {
+      var canvas = angular.element(".canvas");
+      $window.svg2pdf.svg_to_pdf(canvas[0], function (pdf) {
+        $window.svg2pdf.download_pdf('SVG.pdf', pdf.output('dataurlstring'));
+      });
+    };
   }
 })();

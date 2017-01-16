@@ -12,6 +12,11 @@ window.moment = require('moment');
 window.sprintf = require('sprintf-js').sprintf;
 window.toastr = require('toastr');
 
+// TEST
+window.jsPDF = require('./jspdf.debug.js');
+window.svg2png = require('./saveSvgAsPng.js');
+window.svg2pdf = require('./svgToPdf.js');
+
 // Vendor libraries, order matters
 require('components-jqueryui');
 require('jquery-match-height');
